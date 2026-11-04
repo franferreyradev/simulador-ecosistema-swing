@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
 import java.util.ArrayList;
@@ -29,23 +25,13 @@ public class Conejo extends Animal implements Reproducible {
             if (plantaEncontrada.isViva()) {
                 double energiaGanada = plantaEncontrada.serComida();
                 setEnergia(getEnergia() + energiaGanada);
-                System.out.println("Conejo '" + getNombre() + "' comió '" + plantaEncontrada.getNombre() + "' (" + (energiaGanada > 0 ? "+" : "") + energiaGanada + " energia)");
-                eco.registrarEvento();
+                String msg = "Conejo '" + getNombre() + "' comió '" + plantaEncontrada.getNombre() + "' (" + (energiaGanada > 0 ? "+" : "") + Math.round(energiaGanada * 10.0) / 10.0 + " energía)";
+                eco.registrarEvento(msg);
             }
         } else {
             setEnergia(getEnergia() - 15);
-            System.out.println("Conejo '" + getNombre() + "' no encontró comida (-15 energia)");
-            eco.registrarEvento();
+            eco.registrarEvento("Conejo '" + getNombre() + "' no encontró comida (-15 energía)");
         }
-    }
-
-    @Override
-    public void mostrarEstado() {
-        System.out.print("Conejo: " + getNombre() + " | Energía: " + getEnergia());
-        if (getEnergia() < 20) {
-            System.out.print(" [PELIGRO: energia=" + getEnergia() + "]");
-        }
-        System.out.println();
     }
 
     @Override
@@ -53,14 +39,13 @@ public class Conejo extends Animal implements Reproducible {
         long conejosVivos = eco.getConejos().stream().filter(Conejo::isViva).count();
         
         if (conejosVivos > 1) {
-            System.out.println("Conejo '" + getNombre() + "' se reprodujo.");
             eco.agregarEntidad("conejo");
-            eco.registrarEvento();
+            eco.registrarEvento("Conejo '" + getNombre() + "' se reprodujo.");
         }
     }
 
     @Override
     public boolean puedeReproducirse() {
-        return getEnergia() > 60; 
+        return getEnergia() >= 40;
     }
 }

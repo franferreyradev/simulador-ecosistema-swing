@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
 public abstract class Entidad {
@@ -18,7 +14,10 @@ public abstract class Entidad {
     }
 
     public abstract void actuar(GestorEcosistema eco);
-    public abstract void mostrarEstado();
+
+    public String obtenerEstado() {
+        return nombre + " | Edad: " + edad + " | Energía: " + Math.round(energia * 10.0) / 10.0;
+    }
 
     public void envejecer() {
         this.edad++;
@@ -26,8 +25,9 @@ public abstract class Entidad {
     }
 
     public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
     public double getEnergia() { return energia; }
-    
     public void setEnergia(double energia) {
         if (energia < 0) {
             this.energia = 0;
@@ -35,8 +35,10 @@ public abstract class Entidad {
             this.energia = energia;
         }
     }
-    
+
     public boolean isViva() { return viva; }
     public void setViva(boolean viva) { this.viva = viva; }
+
     public int getEdad() { return edad; }
+    public void setEdad(int edad) { this.edad = edad; }
 }

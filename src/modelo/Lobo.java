@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
 import java.util.ArrayList;
@@ -46,11 +42,9 @@ public class Lobo extends Animal implements Peligroso {
                     presa.setViva(false);
                     this.setEnergia(this.getEnergia() + 40);
                     this.exitosCaza++;
-                    System.out.println("Lobo '" + getNombre() + "' cazó a Conejo '" + presa.getNombre() + "' (+40 energia) [cacerías: " + exitosCaza + "]");
-                    eco.registrarEvento();
+                    eco.registrarEvento("Lobo '" + getNombre() + "' cazó a Conejo '" + presa.getNombre() + "' (+40 energía) [éxitos: " + exitosCaza + "]");
                 } else {
-                    System.out.println("Lobo '" + getNombre() + "' falló la caza.");
-                    eco.registrarEvento();
+                    eco.registrarEvento("Lobo '" + getNombre() + "' intentó cazar a Conejo '" + presa.getNombre() + "' pero falló.");
                 }
             }
         }
@@ -59,10 +53,5 @@ public class Lobo extends Animal implements Peligroso {
     @Override
     public int getNivelPeligro() {
         return 50 + (getExitosCaza() * 10); 
-    }
-
-    @Override
-    public void mostrarEstado() {
-        System.out.println("Lobo: " + getNombre() + " | Energía: " + getEnergia() + " | Cacerías exitosas: " + exitosCaza);
     }
 }

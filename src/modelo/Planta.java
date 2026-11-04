@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
 public class Planta extends Entidad implements Reproducible {
@@ -22,11 +18,6 @@ public class Planta extends Entidad implements Reproducible {
     @Override
     public void actuar(GestorEcosistema eco) {
         intentarReproduccion(eco);
-    }
-
-    @Override
-    public void mostrarEstado() {
-        System.out.println("Planta: " + getNombre() + " | Tamaño: " + tamanio + " | Energía: " + getEnergia());
     }
 
     public double serComida() {
@@ -52,10 +43,9 @@ public class Planta extends Entidad implements Reproducible {
 
         for (int i = 0; i < generadas; i++) {
             eco.agregarEntidad("planta");
-            eco.registrarEvento();
         }
         if (generadas > 0) {
-            System.out.println("Planta '" + getNombre() + "' se reprodujo (" + generadas + " nuevas).");
+            eco.registrarEvento("Planta '" + getNombre() + "' se reprodujo (" + generadas + " nuevas).");
         }
     }
 
