@@ -1,0 +1,21 @@
+# NetBeans build outputs
+build/
+dist/
+${build.dir}
+${dist.dir}
+
+# NetBeans user-specific files
+nbproject/private/
+
+# NetBeans auto-generated backup files
+nbproject/genfiles.properties.old
+
+# OS / Editor temporary files
+.DS_Store
+Thumbs.db
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.tmp
