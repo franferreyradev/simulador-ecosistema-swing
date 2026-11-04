@@ -9,8 +9,8 @@ Transformación del simulador de ecosistema de terminal a una aplicación de esc
 
 | Integrante | Rol Principal | Responsabilidades |
 | :--- | :--- | :--- |
-| **Allasia** | Modelo y Lógica de Negocio | Refactorización de entidades de IE1, desacople de consola, gestión de eventos del turno y cálculo de métricas finales. |
-| **Ferreyra** | Persistencia y DAO | Diseño e implementación de `EcosistemaDAO`, lectura/escritura en texto plano (.txt), manejo de I/O y control de excepciones. |
+| **Ferreyra** | Modelo y Lógica de Negocio | Refactorización de entidades de IE1, desacople de consola, gestión de eventos del turno y cálculo de métricas finales. |
+| **Allasia** | Persistencia y DAO | Diseño e implementación de `EcosistemaDAO`, lectura/escritura en texto plano (.txt), manejo de I/O y control de excepciones. |
 | **Sosa** | UX/UI y Vistas Swing | Diseño de prototipo en Figma, construcción de formularios en NetBeans GUI Builder (`.form`) y navegación visual. |
 
 ---
