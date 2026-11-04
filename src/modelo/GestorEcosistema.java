@@ -49,8 +49,8 @@ public class GestorEcosistema {
     }
 
     // ── Altas de Entidades ─────────────────────────────────────
-    public void agregarEntidad(String tipo) {
-        agregarEntidad(tipo, 50.0 + (Math.random() * 50));
+    public boolean agregarEntidad(String tipo) {
+        return agregarEntidad(tipo, 50.0 + (Math.random() * 50));
     }
 
     public boolean agregarEntidad(String tipo, double energia) {
