@@ -38,6 +38,7 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IVistaEcosis
         configuracionView.setVisible(false);
         simulacionView.setVisible(true);
         getRootPane().setDefaultButton(simulacionView.getBotonPrincipal());
+        simulacionView.getBotonPrincipal().requestFocusInWindow();
     }
 
     @Override
@@ -89,7 +90,6 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IVistaEcosis
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         java.awt.GridBagConstraints gridBagConstraints;
 
         configuracionView = new vista.ConfiguracionView();
@@ -104,7 +104,6 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IVistaEcosis
             }
         });
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -112,7 +111,6 @@ public class VentanaPrincipal extends javax.swing.JFrame implements IVistaEcosis
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         getContentPane().add(configuracionView, gridBagConstraints);
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;

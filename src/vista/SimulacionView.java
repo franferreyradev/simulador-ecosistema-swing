@@ -29,6 +29,7 @@ public class SimulacionView extends javax.swing.JPanel {
         initComponents();
         // El aspecto nativo de Windows ignora los colores de la barra sobre la tarjeta oscura.
         pbTurnos.setUI(new javax.swing.plaf.basic.BasicProgressBarUI());
+        tblEntidades.setShowVerticalLines(false);
         tblEntidades.getColumnModel().getColumn(0).setPreferredWidth(150);
         tblEntidades.getColumnModel().getColumn(1).setPreferredWidth(110);
         tblEntidades.getColumnModel().getColumn(2).setPreferredWidth(60);
@@ -103,7 +104,7 @@ public class SimulacionView extends javax.swing.JPanel {
         txtLogEventos.setText("");
         turnoMostrado = 1;
         btnAvanzarTurno.setEnabled(true);
-        btnAvanzarTurno.setBackground(COLOR_PRIMARIO);
+        pnlBtnAvanzarTurno.setBackground(COLOR_PRIMARIO);
         btnGuardar.setEnabled(true);
         btnVerReporte.setEnabled(false);
     }
@@ -111,7 +112,7 @@ public class SimulacionView extends javax.swing.JPanel {
     public void marcarFinalizada() {
         habilitarIntervencion(false, false);
         btnAvanzarTurno.setEnabled(false);
-        btnAvanzarTurno.setBackground(COLOR_DESHABILITADO);
+        pnlBtnAvanzarTurno.setBackground(COLOR_DESHABILITADO);
         btnGuardar.setEnabled(false);
         btnVerReporte.setEnabled(true);
     }
@@ -142,7 +143,6 @@ public class SimulacionView extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         java.awt.GridBagConstraints gridBagConstraints;
 
         pnlDashboard = new javax.swing.JPanel();
@@ -185,6 +185,7 @@ public class SimulacionView extends javax.swing.JPanel {
         btnNuevo = new javax.swing.JButton();
         btnVerReporte = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
+        pnlBtnAvanzarTurno = new javax.swing.JPanel();
         btnAvanzarTurno = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(244, 246, 243));
@@ -403,7 +404,6 @@ public class SimulacionView extends javax.swing.JPanel {
         scrEntidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 223, 218)));
 
         tblEntidades.setAutoCreateRowSorter(true);
-        tblEntidades.setBackground(new java.awt.Color(255, 255, 255));
         tblEntidades.setFillsViewportHeight(true);
         tblEntidades.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         tblEntidades.setGridColor(new java.awt.Color(232, 236, 233));
@@ -434,7 +434,6 @@ public class SimulacionView extends javax.swing.JPanel {
         tblEntidades.setRowHeight(26);
         tblEntidades.setSelectionBackground(new java.awt.Color(220, 239, 228));
         tblEntidades.setSelectionForeground(new java.awt.Color(28, 43, 35));
-        tblEntidades.setShowVerticalLines(false);
         scrEntidades.setViewportView(tblEntidades);
 
         pnlEntidades.add(scrEntidades, java.awt.BorderLayout.CENTER);
@@ -453,11 +452,11 @@ public class SimulacionView extends javax.swing.JPanel {
         pnlEventos.add(lblTituloEventos, java.awt.BorderLayout.NORTH);
 
         scrEventos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 223, 218)));
-        scrEventos.setHorizontalScrollBarPolicy(31);
+        scrEventos.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         txtLogEventos.setEditable(false);
         txtLogEventos.setBackground(new java.awt.Color(255, 255, 255));
-        txtLogEventos.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtLogEventos.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         txtLogEventos.setForeground(new java.awt.Color(28, 43, 35));
         txtLogEventos.setLineWrap(true);
         txtLogEventos.setWrapStyleWord(true);
@@ -500,7 +499,6 @@ public class SimulacionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 12);
         pnlIntervencion.add(lblEstadoIntervencion, gridBagConstraints);
 
-        lblClimaIntervencion.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblClimaIntervencion.setForeground(new java.awt.Color(85, 101, 92));
         lblClimaIntervencion.setText("Clima");
         lblClimaIntervencion.setLabelFor(cmbClimaIntervencion);
@@ -522,7 +520,7 @@ public class SimulacionView extends javax.swing.JPanel {
         pnlIntervencion.add(cmbClimaIntervencion, gridBagConstraints);
 
         btnCambiarClima.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnCambiarClima.setMnemonic(67);
+        btnCambiarClima.setMnemonic('C');
         btnCambiarClima.setText("Cambiar Clima");
         btnCambiarClima.setToolTipText("Aplicar el clima elegido");
         btnCambiarClima.addActionListener(new java.awt.event.ActionListener() {
@@ -537,7 +535,6 @@ public class SimulacionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 20);
         pnlIntervencion.add(btnCambiarClima, gridBagConstraints);
 
-        lblTipoEntidad.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblTipoEntidad.setForeground(new java.awt.Color(85, 101, 92));
         lblTipoEntidad.setText("Entidad");
         lblTipoEntidad.setLabelFor(cmbTipoEntidad);
@@ -559,7 +556,7 @@ public class SimulacionView extends javax.swing.JPanel {
         pnlIntervencion.add(cmbTipoEntidad, gridBagConstraints);
 
         btnAgregarEntidad.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnAgregarEntidad.setMnemonic(69);
+        btnAgregarEntidad.setMnemonic('E');
         btnAgregarEntidad.setText("Agregar Entidad");
         btnAgregarEntidad.setToolTipText("Agregar una entidad del tipo elegido");
         btnAgregarEntidad.addActionListener(new java.awt.event.ActionListener() {
@@ -585,7 +582,7 @@ public class SimulacionView extends javax.swing.JPanel {
         pnlAcciones.setLayout(new java.awt.GridBagLayout());
 
         btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnSalir.setMnemonic(83);
+        btnSalir.setMnemonic('S');
         btnSalir.setText("Salir");
         btnSalir.setToolTipText("Cerrar la aplicación");
         btnSalir.setPreferredSize(new java.awt.Dimension(80, 40));
@@ -602,7 +599,7 @@ public class SimulacionView extends javax.swing.JPanel {
         pnlAcciones.add(btnSalir, gridBagConstraints);
 
         btnNuevo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnNuevo.setMnemonic(78);
+        btnNuevo.setMnemonic('N');
         btnNuevo.setText("Nueva Simulación");
         btnNuevo.setToolTipText("Volver a la configuración inicial");
         btnNuevo.setPreferredSize(new java.awt.Dimension(150, 40));
@@ -619,7 +616,7 @@ public class SimulacionView extends javax.swing.JPanel {
         pnlAcciones.add(btnNuevo, gridBagConstraints);
 
         btnVerReporte.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnVerReporte.setMnemonic(82);
+        btnVerReporte.setMnemonic('R');
         btnVerReporte.setText("Ver Reporte");
         btnVerReporte.setToolTipText("Disponible al terminar la simulación");
         btnVerReporte.setPreferredSize(new java.awt.Dimension(120, 40));
@@ -637,7 +634,7 @@ public class SimulacionView extends javax.swing.JPanel {
         pnlAcciones.add(btnVerReporte, gridBagConstraints);
 
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnGuardar.setMnemonic(71);
+        btnGuardar.setMnemonic('G');
         btnGuardar.setText("Guardar");
         btnGuardar.setToolTipText("Guardar la partida en simulacion.txt");
         btnGuardar.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -653,17 +650,18 @@ public class SimulacionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
         pnlAcciones.add(btnGuardar, gridBagConstraints);
 
-        btnAvanzarTurno.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnAvanzarTurno.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnAvanzarTurno.setPreferredSize(new java.awt.Dimension(210, 40));
+        pnlBtnAvanzarTurno.setLayout(new java.awt.GridBagLayout());
+
         btnAvanzarTurno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAvanzarTurno.setForeground(new java.awt.Color(255, 255, 255));
-        btnAvanzarTurno.setMnemonic(65);
+        btnAvanzarTurno.setMnemonic('A');
         btnAvanzarTurno.setText("Avanzar Turno");
         btnAvanzarTurno.setToolTipText("Procesar el siguiente turno");
         btnAvanzarTurno.setBorderPainted(false);
         btnAvanzarTurno.setContentAreaFilled(false);
         btnAvanzarTurno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAvanzarTurno.setOpaque(true);
-        btnAvanzarTurno.setPreferredSize(new java.awt.Dimension(210, 40));
         btnAvanzarTurno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAvanzarTurnoActionPerformed(evt);
@@ -678,10 +676,18 @@ public class SimulacionView extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        pnlBtnAvanzarTurno.add(btnAvanzarTurno, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        pnlAcciones.add(btnAvanzarTurno, gridBagConstraints);
+        pnlAcciones.add(pnlBtnAvanzarTurno, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -737,13 +743,13 @@ public class SimulacionView extends javax.swing.JPanel {
 
     private void btnAvanzarTurnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvanzarTurnoMouseEntered
         if (btnAvanzarTurno.isEnabled()) {
-            btnAvanzarTurno.setBackground(COLOR_PRIMARIO_HOVER);
+            pnlBtnAvanzarTurno.setBackground(COLOR_PRIMARIO_HOVER);
         }
     }//GEN-LAST:event_btnAvanzarTurnoMouseEntered
 
     private void btnAvanzarTurnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvanzarTurnoMouseExited
         if (btnAvanzarTurno.isEnabled()) {
-            btnAvanzarTurno.setBackground(COLOR_PRIMARIO);
+            pnlBtnAvanzarTurno.setBackground(COLOR_PRIMARIO);
         }
     }//GEN-LAST:event_btnAvanzarTurnoMouseExited
 
@@ -775,6 +781,7 @@ public class SimulacionView extends javax.swing.JPanel {
     private javax.swing.JLabel lblTurno;
     private javax.swing.JProgressBar pbTurnos;
     private javax.swing.JPanel pnlAcciones;
+    private javax.swing.JPanel pnlBtnAvanzarTurno;
     private javax.swing.JPanel pnlDashboard;
     private javax.swing.JPanel pnlEntidades;
     private javax.swing.JPanel pnlEventos;

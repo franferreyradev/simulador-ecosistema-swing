@@ -58,6 +58,7 @@ public class ConfiguracionView extends javax.swing.JPanel {
         cmbClima = new javax.swing.JComboBox<>();
         pnlBotones = new javax.swing.JPanel();
         btnCargar = new javax.swing.JButton();
+        pnlBtnIniciar = new javax.swing.JPanel();
         btnIniciar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(244, 246, 243));
@@ -383,7 +384,10 @@ public class ConfiguracionView extends javax.swing.JPanel {
         gridBagConstraints.weightx = 1.0;
         pnlBotones.add(btnCargar, gridBagConstraints);
 
-        btnIniciar.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnIniciar.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnIniciar.setPreferredSize(new java.awt.Dimension(210, 40));
+        pnlBtnIniciar.setLayout(new java.awt.GridBagLayout());
+
         btnIniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciar.setMnemonic('I');
@@ -392,8 +396,6 @@ public class ConfiguracionView extends javax.swing.JPanel {
         btnIniciar.setBorderPainted(false);
         btnIniciar.setContentAreaFilled(false);
         btnIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnIniciar.setOpaque(true);
-        btnIniciar.setPreferredSize(new java.awt.Dimension(210, 40));
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarActionPerformed(evt);
@@ -408,10 +410,18 @@ public class ConfiguracionView extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        pnlBtnIniciar.add(btnIniciar, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
-        pnlBotones.add(btnIniciar, gridBagConstraints);
+        pnlBotones.add(pnlBtnIniciar, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -451,11 +461,11 @@ public class ConfiguracionView extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnIniciarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarMouseEntered
-        btnIniciar.setBackground(new java.awt.Color(21, 85, 56));
+        pnlBtnIniciar.setBackground(new java.awt.Color(21, 85, 56));
     }//GEN-LAST:event_btnIniciarMouseEntered
 
     private void btnIniciarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarMouseExited
-        btnIniciar.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnIniciar.setBackground(new java.awt.Color(27, 107, 71));
     }//GEN-LAST:event_btnIniciarMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -483,6 +493,7 @@ public class ConfiguracionView extends javax.swing.JPanel {
     private javax.swing.JLabel lblTurnos;
     private javax.swing.JLabel lblTurnosRango;
     private javax.swing.JPanel pnlBotones;
+    private javax.swing.JPanel pnlBtnIniciar;
     private javax.swing.JPanel pnlContenido;
     private javax.swing.JPanel pnlMarca;
     private javax.swing.JPanel pnlMarcaRelleno;

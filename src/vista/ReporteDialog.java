@@ -12,7 +12,9 @@ public class ReporteDialog extends javax.swing.JDialog {
     public ReporteDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        tblPoblacion.setShowVerticalLines(false);
         getRootPane().setDefaultButton(btnCerrar);
+        btnCerrar.requestFocusInWindow();
         setLocationRelativeTo(parent);
     }
 
@@ -44,7 +46,6 @@ public class ReporteDialog extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         java.awt.GridBagConstraints gridBagConstraints;
 
         pnlEncabezado = new javax.swing.JPanel();
@@ -72,12 +73,12 @@ public class ReporteDialog extends javax.swing.JDialog {
         scrPeligrosas = new javax.swing.JScrollPane();
         lstPeligrosas = new javax.swing.JList<>();
         pnlPie = new javax.swing.JPanel();
+        pnlBtnCerrar = new javax.swing.JPanel();
         btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Reporte final");
         setBackground(new java.awt.Color(244, 246, 243));
-        getContentPane().setLayout(new java.awt.BorderLayout());
 
         pnlEncabezado.setBackground(new java.awt.Color(20, 82, 58));
         pnlEncabezado.setBorder(javax.swing.BorderFactory.createEmptyBorder(18, 24, 18, 24));
@@ -134,7 +135,6 @@ public class ReporteDialog extends javax.swing.JDialog {
         scrPoblacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 223, 218)));
         scrPoblacion.setPreferredSize(new java.awt.Dimension(700, 110));
 
-        tblPoblacion.setBackground(new java.awt.Color(255, 255, 255));
         tblPoblacion.setFillsViewportHeight(true);
         tblPoblacion.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         tblPoblacion.setGridColor(new java.awt.Color(232, 236, 233));
@@ -165,7 +165,6 @@ public class ReporteDialog extends javax.swing.JDialog {
         tblPoblacion.setRowHeight(26);
         tblPoblacion.setSelectionBackground(new java.awt.Color(220, 239, 228));
         tblPoblacion.setSelectionForeground(new java.awt.Color(28, 43, 35));
-        tblPoblacion.setShowVerticalLines(false);
         scrPoblacion.setViewportView(tblPoblacion);
 
         pnlPoblacion.add(scrPoblacion, java.awt.BorderLayout.CENTER);
@@ -195,7 +194,6 @@ public class ReporteDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         pnlDestacados.add(lblTituloDestacados, gridBagConstraints);
 
-        lblTituloPlantaLongeva.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblTituloPlantaLongeva.setForeground(new java.awt.Color(85, 101, 92));
         lblTituloPlantaLongeva.setText("Planta más longeva");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -217,7 +215,6 @@ public class ReporteDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 8, 0);
         pnlDestacados.add(lblPlantaLongeva, gridBagConstraints);
 
-        lblTituloConejoLongevo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblTituloConejoLongevo.setForeground(new java.awt.Color(85, 101, 92));
         lblTituloConejoLongevo.setText("Conejo más longevo");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -239,7 +236,6 @@ public class ReporteDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 8, 0);
         pnlDestacados.add(lblConejoLongevo, gridBagConstraints);
 
-        lblTituloLoboLongevo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblTituloLoboLongevo.setForeground(new java.awt.Color(85, 101, 92));
         lblTituloLoboLongevo.setText("Lobo más longevo");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -261,7 +257,6 @@ public class ReporteDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 8, 0);
         pnlDestacados.add(lblLoboLongevo, gridBagConstraints);
 
-        lblTituloMejorCazador.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblTituloMejorCazador.setForeground(new java.awt.Color(85, 101, 92));
         lblTituloMejorCazador.setText("Mejor cazador");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -285,7 +280,6 @@ public class ReporteDialog extends javax.swing.JDialog {
 
         pnlRellenoDestacados.setOpaque(false);
         pnlRellenoDestacados.setLayout(new java.awt.GridBagLayout());
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -336,17 +330,18 @@ public class ReporteDialog extends javax.swing.JDialog {
         pnlPie.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 24, 16, 24));
         pnlPie.setLayout(new java.awt.GridBagLayout());
 
-        btnCerrar.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnCerrar.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnCerrar.setPreferredSize(new java.awt.Dimension(210, 40));
+        pnlBtnCerrar.setLayout(new java.awt.GridBagLayout());
+
         btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrar.setMnemonic(67);
+        btnCerrar.setMnemonic('C');
         btnCerrar.setText("Cerrar");
         btnCerrar.setToolTipText("Volver a la simulación");
         btnCerrar.setBorderPainted(false);
         btnCerrar.setContentAreaFilled(false);
         btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCerrar.setOpaque(true);
-        btnCerrar.setPreferredSize(new java.awt.Dimension(210, 40));
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
@@ -363,9 +358,17 @@ public class ReporteDialog extends javax.swing.JDialog {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        pnlBtnCerrar.add(btnCerrar, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.weightx = 1.0;
-        pnlPie.add(btnCerrar, gridBagConstraints);
+        pnlPie.add(pnlBtnCerrar, gridBagConstraints);
 
         getContentPane().add(pnlPie, java.awt.BorderLayout.SOUTH);
 
@@ -377,11 +380,11 @@ public class ReporteDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseEntered
-        btnCerrar.setBackground(new java.awt.Color(21, 85, 56));
+        pnlBtnCerrar.setBackground(new java.awt.Color(21, 85, 56));
     }//GEN-LAST:event_btnCerrarMouseEntered
 
     private void btnCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseExited
-        btnCerrar.setBackground(new java.awt.Color(27, 107, 71));
+        pnlBtnCerrar.setBackground(new java.awt.Color(27, 107, 71));
     }//GEN-LAST:event_btnCerrarMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -401,6 +404,7 @@ public class ReporteDialog extends javax.swing.JDialog {
     private javax.swing.JLabel lblTituloPlantaLongeva;
     private javax.swing.JLabel lblTituloPoblacion;
     private javax.swing.JList<String> lstPeligrosas;
+    private javax.swing.JPanel pnlBtnCerrar;
     private javax.swing.JPanel pnlCuerpo;
     private javax.swing.JPanel pnlDestacados;
     private javax.swing.JPanel pnlEncabezado;
