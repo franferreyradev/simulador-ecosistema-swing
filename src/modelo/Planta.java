@@ -29,23 +29,22 @@ public class Planta extends Entidad implements Reproducible {
 
     @Override
     public void reproducirse(GestorEcosistema eco) {
+        if (!eco.puedeReproducirPlanta()) {
+            return; // Límite de capacidad de carga ecológica
+        }
+
         Clima clima = eco.getClimaActual();
-        double multiplicador = 1.0;
+        double probabilidadBase = 0.50;
         
-        if (clima == Clima.SOLEADO) multiplicador = 1.5;
-        if (clima == Clima.LLUVIOSO) multiplicador = 2.0;
-        if (clima == Clima.SEQUIA) multiplicador = 0.5;
+        if (clima == Clima.SOLEADO) probabilidadBase = 0.65;
+        if (clima == Clima.LLUVIOSO) probabilidadBase = 0.80;
+        if (clima == Clima.SEQUIA) probabilidadBase = 0.25;
 
-        int generadas = (int) multiplicador;
-        if (Math.random() < (multiplicador - generadas)) {
-            generadas++;
-        }
-
-        for (int i = 0; i < generadas; i++) {
+        // Probabilidad según clima para evitar crecimiento descontrolado
+        if (Math.random() < probabilidadBase) {
+            setEnergia(getEnergia() - 15); // Costo biológico de reproducirse
             eco.agregarEntidad("planta");
-        }
-        if (generadas > 0) {
-            eco.registrarEvento("Planta '" + getNombre() + "' se reprodujo (" + generadas + " nuevas).");
+            eco.registrarEvento("Planta '" + getNombre() + "' se reprodujo (-15 energía).");
         }
     }
 

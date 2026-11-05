@@ -42,6 +42,18 @@ public class GestorEcosistema {
         this(Clima.SOLEADO);
     }
 
+    // ── Capacidad de Carga Ecológica ───────────────────────────
+    public static final int CAPACIDAD_MAX_PLANTAS = 60;
+    public static final int CAPACIDAD_MAX_CONEJOS = 35;
+
+    public boolean puedeReproducirPlanta() {
+        return plantas.size() < CAPACIDAD_MAX_PLANTAS;
+    }
+
+    public boolean puedeReproducirConejo() {
+        return conejos.size() < CAPACIDAD_MAX_CONEJOS;
+    }
+
     // ── Registro de Eventos ────────────────────────────────────
     public void registrarEvento(String descripcion) {
         this.eventosTurnoActual++;
