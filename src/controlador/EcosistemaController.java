@@ -264,6 +264,14 @@ public class EcosistemaController {
         vista.mostrarPantallaConfiguracion();
     }
 
+    public boolean confirmarSalida() {
+        if (!simulacionEnCurso) return true;
+        return vista.solicitarConfirmacion(
+            "Hay una simulación en curso. ¿Desea salir de la aplicación?",
+            "Confirmar Salida"
+        );
+    }
+
     private void finalizarSimulacion() {
         this.simulacionEnCurso = false;
         solicitarReporteFinal();
