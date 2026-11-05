@@ -38,9 +38,11 @@ public class Conejo extends Animal implements Reproducible {
     public void reproducirse(GestorEcosistema eco) {
         long conejosVivos = eco.getConejos().stream().filter(Conejo::isViva).count();
         
-        if (conejosVivos > 1) {
+        // Requiere pareja, espacio ecológico en el ecosistema y probabilidad del 50%
+        if (conejosVivos > 1 && eco.puedeReproducirConejo() && Math.random() < 0.50) {
+            setEnergia(getEnergia() - 20); // Costo biológico de reproducción
             eco.agregarEntidad("conejo");
-            eco.registrarEvento("Conejo '" + getNombre() + "' se reprodujo.");
+            eco.registrarEvento("Conejo '" + getNombre() + "' se reprodujo (-20 energía).");
         }
     }
 
